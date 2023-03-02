@@ -1,5 +1,11 @@
 // Dependencies
 const mongoose = require("mongoose");
+const jwt = require("jsonwebtoken");
+const dotenv = require("dotenv");
+
+dotenv.config();
+
+const secret = process.env.JWT_SECRET;
 
 const userSchema = new mongoose.Schema({
     firstName: {
@@ -15,31 +21,14 @@ const userSchema = new mongoose.Schema({
         required: true,
         unique: true,
     },
+    phone: {
+        type: String,
+        required: true,
+        unique: true,
+    },
     password: {
         type: String,
         required: true,
-    },
-    address: {
-        street: {
-            type: String,
-            required: true,
-        },
-        city: {
-            type: String,
-            required: true,
-        },
-        state: {
-            type: String,
-            required: true,
-        },
-        country: {
-            type: String,
-            required: true,
-        },
-        zipCode: {
-            type: String,
-            required: true,
-        },
     },
     isAdmin: {
         type: Boolean,
@@ -56,6 +45,18 @@ const userSchema = new mongoose.Schema({
         },
     ],
 });
+
+// Generate JSON web token
+userSchema.methods.generateAuthToken = function () {
+    const payload = {
+        user: {
+            id: this._id,
+        },
+    };
+
+    // Use secret in JWT signing
+    return jwt.sign(payload, secret, { expiresIn: 3600 });
+};
 
 const User = mongoose.model("User", userSchema);
 
