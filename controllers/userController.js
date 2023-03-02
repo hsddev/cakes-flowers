@@ -2,6 +2,7 @@
 const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const User = require("../models/User");
+const { sendEmail } = require("../helpers");
 
 // Container for the module
 let userControllers = {};
@@ -56,6 +57,12 @@ userControllers.registerUserPost = async (req, res) => {
 
         // Save user to database
         await user.save();
+
+        // Send email to user
+        const subject = "Welcome to My Cake Shop";
+        const text = `Hi ${user.firstName}. Thank you for registering with My Cake Shop!`;
+
+        await sendEmail(email, subject, text);
 
         // Return JSON web token
         res.json({ token: user.generateAuthToken() });
