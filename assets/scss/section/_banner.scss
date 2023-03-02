@@ -1,0 +1,252 @@
+/*----------------------------------------*/
+/*  08-banner
+/*----------------------------------------*/
+.banner_section {
+    &.mb-105 {
+        @media #{$tablet-device} {
+            margin-bottom: 74px;
+        }
+        @media #{$large-mobile} {
+            margin-bottom: 26px;
+        }
+    }
+}
+.single_banner {
+    @media #{$large-mobile} {
+        margin-bottom: 30px;
+    }
+}
+
+.banner_thumb {
+    position: relative;
+    & > a {
+        display: inline-block;
+    }
+}
+.banner_text {
+    position: absolute;
+    top: 50%;
+    transform: translatey(-50%);
+    left: 45px;
+    @media #{$tablet-device} {
+        left: 25px;
+    }
+    @media #{$large-mobile} {
+        left: 30px;
+    }
+    @media #{$small-mobile2} {
+        left: 22px;
+    }
+    & h3 {
+        color: #2b4174;
+        font-family: $roboto;
+        font-weight: 600;
+        margin-bottom: 10px;
+        & span {
+            color: $secondary_color;
+        }
+        @media #{$desktop-device} {
+            font-size: 20px;
+            line-height: 25px;
+        }
+        @media #{$tablet-device} {
+            margin-bottom: 8px;
+            font-size: 17px;
+            line-height: 24px;
+        }
+        @media #{$large-mobile} {
+            margin-bottom: 10px;
+            font-size: 17px;
+            line-height: 23px;
+        }
+        @media #{$small-mobile2} {
+            margin-bottom: 8px;
+            font-size: 15px;
+            line-height: 21px;
+        }
+    }
+    & h2 {
+        font-size: 36px;
+        line-height: 42px;
+        margin-bottom: 18px;
+        @media #{$desktop-device} {
+            font-size: 30px;
+            line-height: 34px;
+            margin-bottom: 15px;
+        }
+        @media #{$tablet-device} {
+            font-size: 25px;
+            line-height: 28px;
+            margin-bottom: 13px;
+        }
+        @media #{$large-mobile} {
+            font-size: 28px;
+            line-height: 32px;
+            margin-bottom: 15px;
+        }
+        @media #{$small-mobile2} {
+            font-size: 23px;
+            line-height: 25px;
+            margin-bottom: 10px;
+        }
+    }
+    & a {
+        &.btn.btn-link {
+            font-size: 14px;
+            height: 45px;
+            line-height: 45px;
+            border-radius: 15px;
+            padding: 0 26px;
+            &::before {
+                border-radius: 15px;
+            }
+            @media #{$tablet-device} {
+                height: 40px;
+                line-height: 40px;
+                border-radius: 12px;
+                padding: 0 20px;
+            }
+            @media #{$large-mobile} {
+                font-size: 13px;
+                height: 40px;
+                line-height: 40px;
+                border-radius: 10px;
+                padding: 0 18px;
+            }
+            @media #{$small-mobile2} {
+                height: 35px;
+                line-height: 35px;
+                border-radius: 8px;
+                padding: 0 15px;
+            }
+        }
+    }
+}
+
+.banner_fullwidth_section {
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    padding: 110px 0;
+    @media #{$desktop-device} {
+        padding: 60px 0;
+    }
+    @media #{$tablet-device} {
+        padding: 60px 0;
+    }
+    @media #{$large-mobile} {
+        padding: 60px 0;
+    }
+    &.mb-105 {
+        @media #{$tablet-device} {
+            margin-bottom: 75px;
+        }
+        @media #{$large-mobile} {
+            margin-bottom: 56px;
+        }
+    }
+}
+
+.banner_discount_text {
+    & h3 {
+        font-size: 36px;
+        line-height: 1.2;
+        color: $secondary_color2;
+        font-weight: 500;
+        font-family: $roboto;
+        margin-bottom: 21px;
+        & span {
+            color: $secondary_color;
+        }
+        @media #{$desktop-device} {
+            font-size: 25px;
+            line-height: 25px;
+            margin-bottom: 20px;
+        }
+        @media #{$tablet-device} {
+            font-size: 24px;
+            line-height: 28px;
+            margin-bottom: 16px;
+        }
+        @media #{$large-mobile} {
+            font-size: 23px;
+            line-height: 26px;
+            margin-bottom: 17px;
+        }
+        @media #{$small-mobile2} {
+            font-size: 19px;
+            line-height: 21px;
+            margin-bottom: 16px;
+        }
+    }
+    & h2 {
+        font-size: 45px;
+        line-height: 1.3;
+        margin-bottom: 21px;
+        @media #{$desktop-device} {
+            margin-bottom: 16px;
+            font-size: 38px;
+            line-height: 42px;
+        }
+        @media #{$tablet-device} {
+            margin-bottom: 20px;
+            font-size: 38px;
+            line-height: 42px;
+        }
+        @media #{$large-mobile} {
+            margin-bottom: 21px;
+            font-size: 38px;
+            line-height: 40px;
+        }
+        @media #{$small-mobile2} {
+            margin-bottom: 14px;
+            font-size: 28px;
+            line-height: 35px;
+        }
+    }
+    & p {
+        color: #171616;
+        margin-bottom: 41px;
+        @media #{$desktop-device} {
+            margin-bottom: 28px;
+        }
+        @media #{$tablet-device} {
+            margin-bottom: 25px;
+        }
+        @media #{$large-mobile} {
+            margin-bottom: 23px;
+            font-size: 15px;
+        }
+        @media #{$small-mobile2} {
+            margin-bottom: 17px;
+            font-size: 13px;
+        }
+    }
+    & a {
+        &.btn.btn-link {
+            height: 50px;
+            line-height: 50px;
+            padding: 0 35px;
+            font-size: 14px;
+            border-radius: 13px;
+            &::before {
+                border-radius: 13px;
+            }
+            @media #{$tablet-device} {
+                height: 45px;
+                line-height: 45px;
+                padding: 0 27px;
+                font-size: 14px;
+                border-radius: 12px;
+            }
+            @media #{$large-mobile} {
+                font-size: 13px;
+                height: 42px;
+                line-height: 42px;
+                border-radius: 10px;
+                padding: 0 20px;
+            }
+        }
+    }
+}

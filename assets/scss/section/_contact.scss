@@ -1,0 +1,296 @@
+/*----------------------------------------*/
+/*  07-contact-page
+/*----------------------------------------*/
+.contact_page_section {
+    &.mb-100 {
+        @media #{$tablet-device} {
+            margin-bottom: 80px;
+        }
+        @media #{$large-mobile} {
+            margin-bottom: 60px;
+        }
+    }
+}
+.contact_map {
+    margin-bottom: -12px;
+    & iframe {
+        width: 100%;
+        height: 640px;
+        @media #{$desktop-device} {
+            height: 480px;
+        }
+        @media #{$tablet-device} {
+            height: 400px;
+        }
+        @media #{$large-mobile} {
+            height: 350px;
+        }
+        @media #{$small-mobile2} {
+            height: 320px;
+        }
+    }
+}
+
+.contact_info_content {
+    @media #{$large-mobile} {
+        margin-bottom: 55px;
+    }
+    & h2 {
+        font-size: 40px;
+        line-height: 1.4;
+        padding-right: 100px;
+        margin-bottom: 34px;
+        @media #{$desktop-device} {
+            font-size: 36px;
+            margin-bottom: 34px;
+        }
+        @media #{$tablet-device} {
+            font-size: 29px;
+            margin-bottom: 28px;
+            padding-right: 0;
+        }
+        @media #{$large-mobile} {
+            font-size: 28px;
+            padding-right: 0;
+            margin-bottom: 20px;
+        }
+        @media #{$small-mobile2} {
+            font-size: 23px;
+            line-height: 36px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.contact_search {
+    margin-bottom: 53px;
+    @media #{$tablet-device} {
+        margin-bottom: 35px;
+    }
+    @media #{$large-mobile} {
+        margin-bottom: 28px;
+    }
+    & form {
+        position: relative;
+        width: 350px;
+        @media #{$small-mobile2} {
+            width: 100%;
+        }
+        & input::-webkit-input-placeholder {
+            /* Chrome/Opera/Safari */
+            color: #919090;
+        }
+        & input::-moz-placeholder {
+            /* Firefox 19+ */
+            color: #919090;
+        }
+        & input:-ms-input-placeholder {
+            /* IE 10+ */
+            color: #919090;
+        }
+        & input:-moz-placeholder {
+            /* Firefox 18- */
+            color: #919090;
+        }
+        & input {
+            width: 100%;
+            border: 1px solid #d9d9d9;
+            font-size: 14px;
+            font-weight: 300;
+            color: #919090;
+            height: 48px;
+            background: #f6f6f6;
+            padding: 0 50px 0 20px;
+            border-radius: 12px;
+            @media #{$small-mobile2} {
+                height: 44px;
+            }
+        }
+        & button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            border: 0;
+            padding: 0 20px;
+            background: #fc7c7c;
+            font-size: 18px;
+            color: #ffffff;
+            border-radius: 0 12px 12px 0;
+        }
+    }
+}
+
+.contact_info_details {
+    &.mb-45 {
+        @media #{$large-mobile} {
+            margin-bottom: 28px;
+        }
+    }
+    & h3 {
+        text-transform: uppercase;
+        font-size: 22px;
+        margin-bottom: 10px;
+        @media #{$large-mobile} {
+            font-size: 20px;
+        }
+    }
+    & p {
+        font-size: 18px;
+        line-height: 33px;
+        color: #222121;
+        margin-bottom: 0;
+        & a {
+            &:hover {
+                color: $secondary_color;
+            }
+        }
+        @media #{$large-mobile} {
+            font-size: 16px;
+            line-height: 33px;
+        }
+    }
+    & span {
+        line-height: 24px;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-decoration: underline;
+        color: $secondary_color;
+        display: inline-block;
+        margin-top: 28px;
+        @media #{$large-mobile} {
+            font-size: 16px;
+            line-height: 22px;
+            margin-top: 11px;
+        }
+    }
+}
+
+.contact_form {
+    padding: 60px 50px;
+    @media #{$desktop-device} {
+        padding: 50px 30px;
+    }
+    @media #{$tablet-device} {
+        padding: 40px 25px;
+    }
+    @media #{$large-mobile} {
+        padding: 30px 20px;
+    }
+    & h2 {
+        font-weight: 600;
+        color: #000000;
+        margin-bottom: 28px;
+        @media #{$desktop-device} {
+            font-size: 40px;
+            line-height: 52px;
+        }
+        @media #{$tablet-device} {
+            font-size: 35px;
+            list-style: none;
+        }
+        @media #{$large-mobile} {
+            margin-bottom: 24px;
+            font-size: 32px;
+            line-height: 38px;
+        }
+    }
+}
+
+.form_input {
+    & input::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        color: #999999;
+    }
+    & input::-moz-placeholder {
+        /* Firefox 19+ */
+        color: #999999;
+    }
+    & input:-ms-input-placeholder {
+        /* IE 10+ */
+        color: #999999;
+    }
+    & input:-moz-placeholder {
+        /* Firefox 18- */
+        color: #999999;
+    }
+    & input {
+        width: 100%;
+        font-size: 14px;
+        line-height: 32px;
+        color: #999999;
+        font-weight: 300;
+        border: 1px solid #d9d9d9;
+        padding: 0 25px;
+        height: 48px;
+        margin-bottom: 30px;
+        background: #f9f9f9;
+        @media #{$large-mobile} {
+            font-size: 15px;
+            height: 40px;
+            margin-bottom: 25px;
+        }
+        @media #{$small-mobile2} {
+            height: 46px;
+            margin-bottom: 25px;
+        }
+    }
+}
+
+.form_textarea {
+    margin-bottom: 19px;
+    & textarea::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        color: #999999;
+    }
+    & textarea::-moz-placeholder {
+        /* Firefox 19+ */
+        color: #999999;
+    }
+    & textarea:-ms-input-placeholder {
+        /* IE 10+ */
+        color: #999999;
+    }
+    & textarea:-moz-placeholder {
+        /* Firefox 18- */
+        color: #999999;
+    }
+    & textarea {
+        width: 100%;
+        height: 218px;
+        color: #999999;
+        font-weight: 300;
+        font-size: 18px;
+        border: 1px solid #d9d9d9;
+        padding: 15px 25px;
+        resize: none;
+        background: #f9f9f9;
+        @media #{$large-mobile} {
+            font-size: 16px;
+            height: 160px;
+        }
+        @media #{$small-mobile2} {
+            height: 112px;
+        }
+    }
+}
+
+.form_input_btn {
+    & .btn.btn-link {
+        margin-top: 13px;
+    }
+}
+
+/* ---Form Message--- */
+.form {
+    &-message {
+        margin-top: 15px;
+        margin-bottom: 0;
+        &.success {
+            color: green;
+        }
+        &.error {
+            color: red;
+        }
+    }
+}

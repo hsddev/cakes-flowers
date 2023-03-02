@@ -1,0 +1,45 @@
+/*  
+    CSS INDEX
+    =========================================
+    01-header
+    02-other
+    03-footer
+    04-about
+    05-blog
+    06-blog-details
+    07-contact-page
+    08-banner
+    09-product
+    10-home2
+    11-quickview
+    12-faq
+    13-404
+    14-my-account
+    15-login-register
+    16-wishlist
+    17-cart
+    18-compare
+    19-checkout
+*/
+
+@import 'variabls';
+@import 'common';
+@import 'section/header';
+@import 'section/footer';
+@import 'section/other';
+@import 'section/about';
+@import 'section/blog';
+@import 'section/blog-details';
+@import 'section/contact';
+@import 'section/banner';
+@import 'section/product';
+@import 'section/home2';
+@import 'section/quick-view';
+@import 'section/faq';
+@import 'section/404';
+@import 'section/my-account';
+@import 'section/login-register';
+@import 'section/wishlist';
+@import 'section/cart';
+@import 'section/compare';
+@import 'section/checkout';
