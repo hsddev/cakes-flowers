@@ -957,7 +957,7 @@
                         </form>
                     </div>
                     <div class="col-lg-6 pt-5 pt-lg-0">
-                        <form action="register" method="POST">
+                        <form id="form">
                             <div class="login-form">
                                 <h4 class="login-title">Register</h4>
                                 <div class="row">
@@ -983,6 +983,7 @@
                                             type="email"
                                             placeholder="Email Address"
                                             name="email"
+                                            autocomplete="email"
                                         />
                                     </div>
                                     <div class="col-md-12">
@@ -999,6 +1000,7 @@
                                             type="password"
                                             placeholder="Password"
                                             name="password"
+                                            autocomplete="current-password"
                                         />
                                     </div>
                                     <div class="col-md-6">
@@ -1007,6 +1009,7 @@
                                             type="password"
                                             placeholder="Confirm Password"
                                             name="confirmedPassword"
+                                            autocomplete="current-password"
                                         />
                                     </div>
                                     <div class="col-12">
@@ -1326,5 +1329,88 @@
         <script src="assets/js/jquery.zoom.min.js"></script>
         <!-- Main JS -->
         <script src="assets/js/main.js"></script>
+        <script>
+            const form = document.getElementById("form");
+
+            const emailInput = document.querySelector('input[name="email"]');
+            const phoneInput = document.querySelector('input[name="phone"]');
+            const passwordInput = document.querySelector(
+                'input[name="password"]'
+            );
+            const confirmedPasswordInput = document.querySelector(
+                'input[name="confirmedPassword"]'
+            );
+
+            const errorDiv = document.createElement("div");
+            errorDiv.style.color = "red";
+
+            // Function to handle input error
+            const handleInputError = (inputElement, errorMsg) => {
+                inputElement.classList.add("error");
+                errorDiv.textContent = errorMsg;
+
+                inputElement.style.borderColor = "red";
+
+                inputElement.after(errorDiv);
+            };
+
+            // Function to clear error messages and reset style
+            function clearErrors() {
+                errorDiv.textContent = "";
+                phoneInput.style.borderColor = "";
+                passwordInput.style.borderColor = "";
+                confirmedPasswordInput.style.borderColor = "";
+                emailInput.style.borderColor = "";
+            }
+
+            form.addEventListener("submit", async (event) => {
+                event.preventDefault();
+
+                // Clear error messages and reset style
+                clearErrors();
+
+                // Get form values
+                const firstName = form.firstName.value;
+                const lastName = form.lastName.value;
+                const email = form.email.value;
+                const phone = form.phone.value;
+                const password = form.password.value;
+                const confirmedPassword = form.confirmedPassword.value;
+
+                const response = await fetch("/register", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        firstName,
+                        lastName,
+                        email,
+                        phone,
+                        password,
+                        confirmedPassword,
+                    }),
+                    headers: { "Content-Type": "application/json" },
+                });
+
+                const data = await response.json();
+                console.log(data);
+
+                if (data.msg) {
+                    if (data.msg.includes("Phone number already exists")) {
+                        handleInputError(phoneInput, data.msg);
+                    }
+
+                    if (data.msg.includes("Passwords do not match")) {
+                        handleInputError(confirmedPasswordInput, data.msg);
+                        handleInputError(passwordInput, data.msg);
+                    }
+
+                    if (data.msg.includes("Email already exists")) {
+                        handleInputError(emailInput, data.msg);
+                    }
+                } else {
+                    // Redirect to index page
+                    window.location.href = "/home";
+                }
+            });
+        </script>
     </body>
 </html>

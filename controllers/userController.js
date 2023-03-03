@@ -74,7 +74,7 @@ userControllers.registerUserPost = async (req, res) => {
 
 // Register a new user GET
 userControllers.registerUserGet = (req, res) => {
-    res.render("login-register");
+    res.render("register");
 };
 
 // Update user's data

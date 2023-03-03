@@ -6,7 +6,7 @@ const userControllers = require("../controllers/userController");
 // path routes
 router.post("/register", userControllers.registerUserPost);
 
-router.get("/", userControllers.registerUserGet);
+router.get("/register", userControllers.registerUserGet);
 
 // Export module
 module.exports = router;
